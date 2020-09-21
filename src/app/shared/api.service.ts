@@ -17,7 +17,7 @@ export class ApiService {
 
   // Add student
   AddStudent(data: Student): Observable<any> {
-    let API_URL = `${this.endpoint}/add-student`;
+    let API_URL = `${this.endpoint}add-student`;
     return this.http.post(API_URL, data)
       .pipe(
         catchError(this.errorMgmt)
@@ -31,7 +31,7 @@ export class ApiService {
 
   // Get student
   GetStudent(id): Observable<any> {
-    let API_URL = `${this.endpoint}/read-student/${id}`;
+    let API_URL = `${this.endpoint}read-student/${id}`;
     return this.http.get(API_URL, { headers: this.headers })
       .pipe(
         map((res: Response) => {
@@ -43,7 +43,7 @@ export class ApiService {
 
   // Update student
   UpdateStudent(id, data): Observable<any> {
-    let API_URL = `${this.endpoint}/update-student/${id}`;
+    let API_URL = `${this.endpoint}update-student/${id}`;
     return this.http.put(API_URL, data, { headers: this.headers })
       .pipe(
         catchError(this.errorMgmt)
@@ -52,7 +52,7 @@ export class ApiService {
 
   // Delete student
   DeleteStudent(id): Observable<any> {
-    var API_URL = `${this.endpoint}/delete-student/${id}`;
+    var API_URL = `${this.endpoint}delete-student/${id}`;
     return this.http.delete(API_URL)
       .pipe(
         catchError(this.errorMgmt)
